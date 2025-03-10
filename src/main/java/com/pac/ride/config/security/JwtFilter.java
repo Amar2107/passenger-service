@@ -1,6 +1,6 @@
 package com.pac.ride.config.security;
 
-import com.pac.ride.util.JWTUtil;
+import com.prac.ride.util.JWTUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,7 +12,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
-import java.security.Security;
 
 @Configuration
 public class JwtFilter extends OncePerRequestFilter {
@@ -28,7 +27,7 @@ public class JwtFilter extends OncePerRequestFilter {
         if(authorizationHeader != null && authorizationHeader.startsWith("Bearer ")){
             String token  = authorizationHeader.substring(7);
             if (jwtUtil.validateToken(token)){
-                Long passengerId = jwtUtil.extractPassengerId(token);
+                Long passengerId = jwtUtil.extractId(token);
                 UsernamePasswordAuthenticationToken authenticationToken = new  UsernamePasswordAuthenticationToken(passengerId,null,null);
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             }

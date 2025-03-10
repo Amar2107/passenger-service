@@ -1,7 +1,5 @@
 package com.pac.ride.config.mongo;
 
-
-
 import com.mongodb.*;
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoClients;
@@ -15,7 +13,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import reactor.core.publisher.Mono;
-
 
 @Slf4j
 @Configuration

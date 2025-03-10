@@ -2,9 +2,9 @@ package com.pac.ride.service;
 
 import com.pac.ride.entity.RideRequest;
 import com.pac.ride.entity.RideResponse;
-import com.pac.ride.exception.AuthException;
 import com.pac.ride.repo.PassengerRepo;
 import com.prac.ride.entity.passenger.Passenger;
+import com.prac.ride.exception.AuthException;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

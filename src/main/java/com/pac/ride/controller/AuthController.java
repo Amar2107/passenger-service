@@ -1,12 +1,13 @@
 package com.pac.ride.controller;
 
-import com.pac.ride.entity.ApplicationResponse;
-import com.pac.ride.entity.ErrorResponse;
+
 import com.pac.ride.entity.LoginRequest;
-import com.pac.ride.entity.SuccessResponse;
 import com.pac.ride.service.PassengerService;
-import com.pac.ride.util.JWTUtil;
 import com.prac.ride.entity.passenger.Passenger;
+import com.prac.ride.response.ApplicationResponse;
+import com.prac.ride.response.ErrorResponse;
+import com.prac.ride.response.SuccessResponse;
+import com.prac.ride.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

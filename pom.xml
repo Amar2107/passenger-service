@@ -43,32 +43,9 @@
         <dependency>
             <groupId>com.prac.ride_booking</groupId>
             <artifactId>ridesharing-common</artifactId>
-            <version>1.0.8</version>
+            <version>1.0.11</version>
         </dependency>
 
-        <!-- SECURITY DEPENDENCIES -->
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-api</artifactId>
-            <version>${jwt-version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-impl</artifactId>
-            <version>${jwt-version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-jackson</artifactId>
-            <version>${jwt-version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
 
     <!--TEST DEPENDENCIES-->
         <dependency>
