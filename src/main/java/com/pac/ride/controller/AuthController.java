@@ -36,14 +36,16 @@ public class AuthController {
 
 
     @PostMapping("/login")
-    public ResponseEntity<ApplicationResponse> login(@RequestBody LoginRequest loginRequest){
-        Long id = passengerService.validatePassenger(loginRequest.getEmail(), loginRequest.getPassword()).block();
-                 if (id == null) {
-                    String token = jwtUtil.generateToken(id);
-                        return ResponseEntity.ok(new SuccessResponse(token));
+    public Mono<ResponseEntity<ApplicationResponse>> login(@RequestBody LoginRequest loginRequest){
+        return passengerService.validatePassenger(loginRequest.getEmail(), loginRequest.getPassword()).flatMap(i->{
+                 if (i != null) {
+                    String token = jwtUtil.generateToken(i);
+                        return Mono.just(ResponseEntity.ok(new SuccessResponse(token)));
                     }
                     else
-                        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ErrorResponse("Invalid Creds "));
+                        return Mono.just(ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ErrorResponse("Invalid Creds ")));
+
+        });
 
     }
 

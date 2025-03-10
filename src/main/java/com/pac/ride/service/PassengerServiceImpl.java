@@ -1,5 +1,7 @@
 package com.pac.ride.service;
 
+import com.pac.ride.entity.RideRequest;
+import com.pac.ride.entity.RideResponse;
 import com.pac.ride.exception.AuthException;
 import com.pac.ride.repo.PassengerRepo;
 import com.prac.ride.entity.passenger.Passenger;
@@ -49,6 +51,11 @@ public class PassengerServiceImpl implements PassengerService {
     private void getAllPassengers(){
         Flux<Passenger> passengerFlux = passengerRepo.getAllPassengers();
         passengerFlux.subscribe(System.out::println);
+    }
+
+    public RideResponse bookRide(Long passengerId, RideRequest request){
+        //TODO: add ride service call
+        return new RideResponse("1234","Ride created");
     }
 
 }
