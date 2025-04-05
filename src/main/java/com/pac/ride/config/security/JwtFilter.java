@@ -1,6 +1,6 @@
 package com.pac.ride.config.security;
 
-import com.prac.ride.util.JWTUtil;
+import com.pac.ride.util.JWTUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
